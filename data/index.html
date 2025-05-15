@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PID Config</title>
+  <style>
+    body { font-family: sans-serif; margin: 20px; }
+    input { width: 80px; }
+    button { margin-left: 10px; }
+    .group { margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <h2>PID Configuration</h2>
+  <form action="/update" method="POST">
+    <div class="group">
+      XY_P_GAIN: <input name="XY_P_GAIN" type="text" />
+      <button type="submit">Update</button>
+    </div>
+    <div class="group">
+      XY_I_GAIN: <input name="XY_I_GAIN" type="text" />
+      <button type="submit">Update</button>
+    </div>
+    <!-- Repeat similar divs for each variable -->
+    <div class="group">
+      YAW_I_LIMIT: <input name="YAW_I_LIMIT" type="text" />
+      <button type="submit">Update</button>
+    </div>
+  </form>
+
+  <form action="/reset" method="POST">
+    <button style="background:red;color:white;">Reset</button>
+  </form>
+
+  <form action="/fly" method="POST">
+    <button style="background:green;color:white;">Fly</button>
+  </form>
+</body>
+</html>
